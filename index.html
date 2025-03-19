@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+        /* style.css */
+
+
+        .flip-container {
+            /* perspective: 1000px; */
+            width: 200px;
+            height: 300px;
+        }
+
+        .flipper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+
+        .flip-container:hover .flipper {
+            transform: rotateY(180deg);
+        }
+
+        .front1,.front2,.front3,
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .front1 {
+            background: url('./public/image/manufacturing-engineering-and-technology-original-imaetdqh5myksfhz.webp') center/cover no-repeat;
+            height: 300px;
+        }
+        .front2 {
+            background: url('./public/image/61-wUjuEz7L._AC_UF1000\,1000_QL80_.jpg') center/cover no-repeat;
+            height: 300px;
+        }
+        .front3 {
+            background: url('./public/image/61MSKkYLroL.jpg') center/cover no-repeat;
+            height: 300px;
+        }
+
+        .back {
+            background: #f8f8f8;
+            transform: rotateY(180deg);
+        }
+
+        .back a {
+            font-size: 18px;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+
+
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            background: linear-gradient(45deg, #0d3c47, #029e2f, #04a5c3, #ff5722, #ff9800, #673ab7, #e91e63);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s infinite alternate ease-in-out;
+        }
+        @keyframes gradientAnimation {
+            0% {
+                background: linear-gradient(45deg, #0d3c47, #029e2f, #04a5c3, #ff5722, #ff9800, #673ab7, #e91e63);
+                background-size: 400% 400%;
+            }
+            25% {
+                background: linear-gradient(45deg, #1a237e, #d32f2f, #00bcd4, #4caf50, #ffc107, #8e24aa, #f44336);
+                background-size: 400% 400%;
+            }
+            50% {
+                background: linear-gradient(45deg, #ffeb3b, #3f51b5, #ff4081, #009688, #795548, #03a9f4, #cddc39);
+                background-size: 400% 400%;
+            }
+            75% {
+                background: linear-gradient(45deg, #8bc34a, #ff5722, #e040fb, #1976d2, #ff9800, #673ab7, #00e676);
+                background-size: 400% 400%;
+            }
+            100% {
+                background: linear-gradient(45deg, #ff1744, #6200ea, #00bcd4, #4caf50, #fdd835, #d500f9, #c51162);
+                background-size: 400% 400%;
+            }
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        header nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 1em;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+@media screen and (orientation:landscape) {
+     main {
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            
+        }
+        footer{
+            position: fixed;
+            bottom: 0;
+        }
+}
+@media screen and (orientation:portrait){
+    .flip-container{
+        margin: auto;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+}
+
+        #hero {
+            background-color: #0eec67;
+            padding: 2em;
+            text-align: center;
+        }
+
+        .button {
+            background-color: #333;
+            color: #d8d8d8;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+           
+            width: 100%;
+            margin-bottom: 20px;
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to Book Showcase</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="flip-container">
+            <div class="flipper">
+                <div class="front1">
+                    <!-- Image is set in CSS -->
+                </div>
+                <div class="back">
+                    <a href="book1.html">Click For Details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-container">
+            <div class="flipper">
+                <div class="front2">
+                    <!-- Image is set in CSS -->
+                </div>
+                <div class="back">
+                    <a href="book2.html">Click For Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="flip-container">
+            <div class="flipper">
+                <div class="front3">
+                    <!-- Image is set in CSS -->
+                </div>
+                <div class="back">
+                    <a href="book3.html">Click For Details</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    
+
+    <footer>
+        <p>&copy; 2025 My Website</p>
+    </footer>
+
+</body>
+
+</html>
